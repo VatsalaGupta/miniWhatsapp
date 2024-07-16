@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h3 {
+    text-align: center;
+    color: #075e54;
+    font-size: 24px;
+    margin-bottom: 20px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.chat-card {
+    background-color: white;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    animation: slideIn 0.3s ease-out;
+    transition: transform 0.3s;
+}
+
+.chat-card:hover {
+    transform: translateY(-5px);
+}
+
+.chat-header, .chat-footer {
+    font-size: 14px;
+    color: #555;
+}
+
+.chat-header {
+    margin-bottom: 10px;
+}
+
+.chat-footer {
+    margin-top: 10px;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
+
+.msg {
+    background-color: #dcf8c6;
+    padding: 15px;
+    border-radius: 20px;
+    max-width: 75%;
+    position: relative;
+    margin: 10px 0;
+    animation: slideIn 0.3s ease-out;
+}
+
+.msg p {
+    margin: 0;
+    color: #333;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 600px) {
+    .chat-card {
+        padding: 15px;
+    }
+
+    .msg {
+        max-width: 100%;
+    }
+}
