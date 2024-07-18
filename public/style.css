@@ -1,94 +1,162 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+/* Reset some basic styles */
+* {
     margin: 0;
-    padding: 20px;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
+/* Basic container styling */
 .container {
-    width: 90%;
     max-width: 800px;
-    margin: 0 auto;
+    margin: 20px auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    border: 1px solid black; /* Added black border */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Header styling */
 h3 {
     text-align: center;
-    color: #075e54;
-    font-size: 24px;
+    color: #333;
     margin-bottom: 20px;
-    animation: fadeIn 0.5s ease-in-out;
 }
 
+/* Form styling */
+form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+form button {
+    background: #4CAF50;
+    color: white;
+    border: 1px solid black; /* Added black border */
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+form button:hover {
+    background: #45a049;
+}
+
+/* Chat card styling */
 .chat-card {
-    background-color: white;
-    border-radius: 16px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: white;
+    padding: 15px;
     margin-bottom: 20px;
-    animation: slideIn 0.3s ease-out;
-    transition: transform 0.3s;
+    border-radius: 10px;
+    border: 1px solid black; /* Added black border */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.chat-card:hover {
-    transform: translateY(-5px);
-}
-
-.chat-header, .chat-footer {
-    font-size: 14px;
-    color: #555;
-}
-
-.chat-header {
+.chat-header, .chat-body, .chat-footer {
     margin-bottom: 10px;
 }
 
-.chat-footer {
-    margin-top: 10px;
-    border-top: 1px solid #ddd;
-    padding-top: 10px;
+.chat-header p, .chat-footer p {
+    color: #666;
 }
 
-.msg {
-    background-color: #dcf8c6;
-    padding: 15px;
-    border-radius: 20px;
-    max-width: 75%;
-    position: relative;
-    margin: 10px 0;
-    animation: slideIn 0.3s ease-out;
+.chat-body .msg {
+    background: #f1f1f1;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid black; /* Added black border */
 }
 
-.msg p {
-    margin: 0;
+.chat-body .msg p {
+    margin-bottom: 10px;
+}
+
+.chat-body form {
+    display: inline-block;
+}
+
+.chat-body form button {
+    background: #008CBA;
+    margin-right: 5px;
+    border: 1px solid black; /* Added black border */
+}
+
+.chat-body form button:nth-child(2) {
+    background: #f44336;
+}
+
+.chat-body form button:hover {
+    opacity: 0.8;
+}
+
+/* Edit chat page styling */
+body {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    border: 1px solid black; /* Added black border */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+p {
+    margin-bottom: 20px;
     color: #333;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid black; /* Added black border */
+    border-radius: 5px;
+    margin-bottom: 20px;
+    resize: vertical;
 }
 
-@keyframes slideIn {
-    from {
-        transform: translateY(10px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+form button {
+    background: #4CAF50;
+    color: white;
+    border: 1px solid black; /* Added black border */
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
 }
 
+form button:hover {
+    background: #45a049;
+}
+
+/* Responsive Design */
 @media (max-width: 600px) {
-    .chat-card {
-        padding: 15px;
+    .container {
+        padding: 10px;
     }
 
-    .msg {
-        max-width: 100%;
+    form button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .chat-body form {
+        width: 100%;
+    }
+
+    .chat-body form button {
+        width: 48%;
+        margin-bottom: 10px;
+    }
+
+    .chat-body form button:nth-child(2) {
+        margin-left: 4%;
+    }
+
+    form textarea {
+        width: 100%;
+        height: 200px;
     }
 }
