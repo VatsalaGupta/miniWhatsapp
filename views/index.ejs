@@ -9,8 +9,8 @@
 <body>
     <div class="container">
         <h3>ALL CHATS</h3>
-        <form methods="GET" action="/chats/new">
-            <button>New Chat</button>
+        <form method="GET" action="/chats/new">
+            <button type="submit">New Chat</button>
         </form>
         <br>
         <% for(let chat of chats){ %>
@@ -21,10 +21,22 @@
                 <div class="chat-body">
                     <div class="msg">
                         <p><%= chat.msg %></p>
+                        <form method="GET" action="/chats/<%= chat._id %>/edit">
+                            <button>edit</button>
+                        </form>
+                        <br>
+                        <form method="POST" action="/chats/<%= chat._id %>/?_method=DELETE">
+                            <button>delete</button>
+                        </form>
                     </div>
                 </div>
                 <div class="chat-footer">
                     <p>Received by <i><%= chat.to %></i></p>
+                    <hr/>
+                    <p>Received at 
+                        <i><%= chat.created_at.toString().split(" ")[4] %></i><br>
+                        <i><%= chat.created_at.toString().split(" ").slice(0, 4).join("-") %></i>
+                    </p>
                 </div>
             </div>
             <br>
